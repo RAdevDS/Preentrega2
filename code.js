@@ -86,16 +86,25 @@ const newProduct = productManager.addProduct({
 
 console.log('Producto agregado:', newProduct);
 
+// Obtener un producto por ID
+const productIdToFind = 11; // Reemplaza con el ID que deseas buscar
+const foundProduct = productManager.getProductById(productIdToFind);
+
+if (foundProduct) {
+  console.log('Producto encontrado por ID:', foundProduct);
+} else {
+  console.log('Producto no encontrado por ID:', productIdToFind);
+}
+
 // Actualizar un producto
-const productId = 11;
-const updatedProduct = productManager.updateProduct(productId, {
+const updatedProduct = productManager.updateProduct(productIdToFind, {
   price: 12.99,
   stock: 60,
 });
 console.log('Producto actualizado:', updatedProduct);
 
 // Eliminar un producto
-productManager.deleteProduct(productId);
+productManager.deleteProduct(productIdToFind);
 console.log('Producto eliminado.');
 
 // Obtener todos los productos
